@@ -20,4 +20,4 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore ResearchRepository/ResearchRepository.sln
     - name: Build
-      run: dotnet build --no-restore ResearchRepository/ResearchRepository.sln
+      run: dotnet build --no-restore ResearchRepository/WebApplication_ResearchRepository/WebApplication_ResearchRepository.csproj
