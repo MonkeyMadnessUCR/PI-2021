@@ -1,4 +1,4 @@
-name: Build
+name: Build and Analize in Sonarcloud
 on:
   workflow_dispatch:
   push:
@@ -49,6 +49,6 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         shell: powershell
         run: |
-          .\.sonar\scanner\dotnet-sonarscanner begin /k:"BetoCR16_PI-2021" /o:"betocr16" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
+          .\.sonar\scanner\dotnet-sonarscanner begin /k:"MonkeyMadnessUCR_PI-2021" /o:"monkeymadnessucr" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
           dotnet build --no-restore ResearchRepository/WebApplication_ResearchRepository/WebApplication_ResearchRepository.csproj
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
